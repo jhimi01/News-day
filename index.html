@@ -14,9 +14,9 @@
     />
 
     <style>
-        a{
-            cursor: pointer;
-        }
+      a {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body class="container-md p-4 p-md-0" onload="fetchcategory()">
@@ -39,23 +39,58 @@
       </nav>
       <hr />
       <!-- section menu using api -->
-      <section class="categoried-container d-flex align-items-center justify-content-between" id="categories-container">
-  
-      </section>
+      <section
+        class="categoried-container d-flex align-items-center justify-content-between"
+        id="categories-container"
+      ></section>
     </header>
 
     <!-- main section -->
     <main>
-
-        <!-- alert -->
-       <section>
+      <!-- alert -->
+      <section>
         <div class="alert alert-light" role="alert">
-            <span id="item-news">4</span> items found for category <span id="new-section">Entertainment</span>
-          </div>
-       </section>
+          <span id="item-news">0</span> items found for category
+          <span id="new-section">News topic</span>
+        </div>
+      </section>
 
-       <!-- sorting option section -->
-       
+      <!-- sorting option section -->
+      <section class="d-flex justify-content-between">
+        <div class="d-flex align-items-center justify-content-center gap-2">
+          <p class="mb-0">sort by:</p>
+          <div class="dropdown">
+            <button
+              class="btn dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              disabled
+            >
+               default
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary">Todays Pick</button>
+          <button type="button" class="btn btn-outline-secondary">Trending</button>
+        </div>
+      </section>
+
+
+
+
+      <!-- showing all news -->
+      <section class="all-news my-5" >
+        <div id="all-news">
+
+        </div>
+      </section>
     </main>
 
     <!-- boostarap js link -->
