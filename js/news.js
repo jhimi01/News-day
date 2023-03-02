@@ -1,3 +1,5 @@
+let fetchdata = [];
+
 const fetchcategory = () => {
   fetch("https://openapi.programming-hero.com/api/news/categories")
     .then((res) => res.json())
@@ -19,7 +21,10 @@ const fetchcategoryid = (category_id, category_name) => {
   const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => itemshow(data.data, category_name));
+    .then((data) => {
+    fetchdata=data.data, category_name;
+    itemshow(data.data, category_name)});
+    
 };
 
 const itemshow = (data, category_name) => {
@@ -97,5 +102,20 @@ const shownewsdetail = (newsid) => {
     }`;
   });
 };
+
+
+
+// trending button
+const showtodayspick = () =>{
+  let trendingnews = fetchdata.filter(data => data.others_info.is_todays_pick === true); 
+  const category_name = document.getElementById('new-section').innerText;
+  itemshow(trendingnews, category_name);
+}
+// todays pick button
+const showtrending = () =>{
+  let trendingnews = fetchdata.filter(data => data.others_info.is_trending === true); 
+  const category_name = document.getElementById('new-section').innerText;
+  itemshow(trendingnews, category_name);
+}
 
 // fetchcategory()
